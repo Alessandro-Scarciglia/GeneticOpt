@@ -3,6 +3,6 @@ A vanilla implementation of Genetic Algorithm Optimization as a support to Preli
 
 # Usage
 Create a virtual environment 
-'''
+```
 python3 -m venv GeneticOpt-venv
-'''
+```
