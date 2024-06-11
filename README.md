@@ -9,7 +9,7 @@ A vanilla implementation of Genetic Algorithm Optimization as a support to Preli
 1. Create a virtual environment and activate it:
 ```
 python3 -m venv GeneticOpt-venv
-source bin/activate
+source GeneticOpt-venv/bin/activate
 ```
 2. Clone the repository
 ```
