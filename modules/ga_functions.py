@@ -1,6 +1,7 @@
 import random
 import numpy as np
-from .fitness import fitness_function
+from .fitness import fitness
+from parameters import *
 
 
 # Selection: Tournament selection
@@ -23,7 +24,7 @@ def crossover(parent1: dict,
     crossover_point = random.randint(1, len(parent1)-1)
 
     # Breed children accordingly
-    for i, (feature_name, feature_val) in enumerate(parent1.items()):
+    for i, (feature_name, _) in enumerate(parent1.items()):
         if i < crossover_point:
             child1[feature_name] = parent1[feature_name]
             child2[feature_name] = parent2[feature_name]
@@ -90,6 +91,8 @@ def genetic_algorithm(dataframe: dict,
                       n_population: int = 50,
                       n_generations: int = 100,
                       mutation_rate: int = 0.1,
+                      parent_pool: int = 2,
+                      n_mutation: int = 1,
                       verbose: bool = False) -> tuple:
     
     # Initialize population
@@ -104,7 +107,7 @@ def genetic_algorithm(dataframe: dict,
     for generation in range(n_generations):
 
         # Compute fitness for each individual
-        fitnesses = [fitness_function(individual) for individual in population]
+        fitnesses = [fitness(individual, units) for individual in population]
         new_population = []
         
         # Breeding phase
@@ -133,7 +136,7 @@ def genetic_algorithm(dataframe: dict,
             print()
 
     # Return the best individual from the final population
-    final_fitnesses = [fitness_function(individual) for individual in population]
+    final_fitnesses = [fitness(individual, units) for individual in population]
     best_final_index = np.argmax(final_fitnesses)
 
     

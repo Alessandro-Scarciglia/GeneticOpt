@@ -1,13 +1,3 @@
-# Hyperparameters
-POPULATION_SIZE = 50
-GENERATIONS = 100
-MUTATION_RATE = 1
-PARENT_POOL = 10
-N_MUTATION = 3
-
-# Display mid-results
-VERBOSE = False
-
 # Data on features
 units = {
     "processors": {
@@ -38,20 +28,5 @@ units = {
         "MultiCamA": {"power": 3, "weight": 0.3, "fps": 20, "cost": 20000},
         "MultiCamB": {"power": 2.5, "weight": 0.25, "fps": 25, "cost": 25000},
         "MultiCamC": {"power": 4, "weight": 0.35, "fps": 30, "cost": 30000}
-    }
-}
-
-# Feature table
-features_table = {
-    "categorical": {
-        "processor": ["LEON4", "LEON2", "MyriadX", "Myriad2", "iMX8", "Zynq7000", "Snapdragon855", "JetsonTX2", "RaspberryPi4", "RK3399"],
-        "coprocessor": ["VPU", "DSP", "GPU", "FPGA", "NNP"],
-        "processor_redundancy": ["Yes", "No"],
-        "coprocessor_redundancy": ["Yes", "No"],
-        "inspection_camera": ["CamA", "CamB", "CamC"],
-        "multispectral_camera": ["MultiCamA", "MultiCamB", "MultiCamC"]
-    },
-    "numerical": {
-        
     }
 }

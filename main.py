@@ -8,11 +8,15 @@ from utils.display_utils import fitness_trend
 def main():
 
     # Run genetic optimization
-    _, _, best_fitnesses, avg_fitnesses = genetic_algorithm(dataframe=opt_params,
+    _, _, best_fitnesses, avg_fitnesses = genetic_algorithm(dataframe=features_table,
                                                             n_population=POPULATION_SIZE,
                                                             n_generations=GENERATIONS,
                                                             mutation_rate=MUTATION_RATE,
-                                                            verbose=True)
+                                                            parent_pool=PARENT_POOL,
+                                                            n_mutation=N_MUTATION,
+                                                            verbose=VERBOSE)
+    
+    
     
     # Plot optimization trend
     fitness_trend(n_generations=GENERATIONS,
