@@ -23,3 +23,7 @@ opt_params = {
         "coating": ["Type A", "Type B", "Type C"]
     }
 }
+
+# Test to be performed for algorithm assessment
+# List of tuples containing test name, population size, and n_restarts
+TESTS = [("Test0", 100, 1), ("Test1", 100, 10), ("Test2", 1000, 1)]
