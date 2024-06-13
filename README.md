@@ -21,9 +21,3 @@ git clone https://github.com/Alessandro-Scarciglia/GeneticOpt.git
 cd GeneticOpt
 pip3 install -r requirements.txt
 ```
-3. Run main file:
-```
-python3 src/main.py
-```
-At this stage, a progress bar of the running test cases should appear.
-Output plots of the test sets are stored in `/test_output` folder.
